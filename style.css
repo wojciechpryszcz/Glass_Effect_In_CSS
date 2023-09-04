@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+  --green: #38ccae;
+  --dark: #1b1b1b;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--green);
+  background: linear-gradient(to right top, var(--dark), var(--green));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  max-height: 80vh;
+  display: flex;
+  background: rgba(0, 0, 0, 0.75);
+  background: linear-gradient(
+    to right top,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.25)
+  );
+  border-radius: 20px;
+  position: relative;
+  backdrop-filter: blur(8px);
+  padding: 32px 92px;
+  overflow: auto;
+  flex-wrap: wrap;
+}
+
+header {
+  flex: 1;
+}
+
+h1 {
+  font-size: 48px;
+  padding: 24px 0 12px;
+}
+
+p {
+  padding-bottom: 12px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+a {
+  color: var(--green);
+  text-decoration: none;
+  position: relative;
+}
+
+a:hover .link_border {
+  width: 100%;
+}
+
+.logo {
+  width: 150px;
+  margin-right: 100px;
+}
+
+.logo img {
+  width: 100%;
+}
+
+main {
+  display: flex;
+}
+
+section:first-child {
+  margin-right: 100px;
+}
+
+.people {
+  display: flex;
+  height: 100%;
+  padding-bottom: 24px;
+}
+
+.link_border {
+  width: 0;
+  height: 3px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--green);
+  background: linear-gradient(90deg, transparent, var(--green));
+  transition: width 0.3s;
+}
+
+.bg_img {
+  position: absolute;
+}
+
+.bg_img--button {
+  top: 0;
+  height: 30vh;
+  right: 60%;
+  animation: slideDown 10s linear infinite;
+}
+
+.bg_img--dots {
+  top: 0;
+  left: 50%;
+  height: 75vh;
+  animation: rotateDots 15s linear infinite;
+}
+
+.bg_img--logo {
+  left: 0;
+  top: 50%;
+  width: 50%;
+  opacity: 25%;
+  transform: translate(-50%, -50%);
+}
+
+.person_img {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  background: var(--green);
+  border: 3px #fff solid;
+  border-radius: 100%;
+}
+
+.person_img img {
+  width: 100%;
+}
+
+.person_name {
+  display: block;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 500;
+  background: linear-gradient(90deg, var(--green), #fff);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+.person:last-child {
+  align-self: flex-end;
+}
+
+person_img--filip {
+  transform: translate(10px, -30px);
+}
+
+button {
+  width: 350px;
+  font-size: 42px;
+  color: #fff;
+  font-weight: 700;
+  background: var(--green);
+  background: linear-gradient(
+    to right top,
+    var(--green),
+    rgba(255, 255, 255, 0.6)
+  );
+  padding: 16px 0;
+  border: none;
+  cursor: pointer;
+  margin-top: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+button:focus {
+  outline-color: #fff;
+}
+
+button:after {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  left: -150px;
+  top: -25px;
+  width: 50px;
+  height: 150%;
+  transform: rotate(20deg);
+  transition: transform 0.3s;
+}
+
+button:hover:after {
+  transform: translateX(500px) rotate(20deg);
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-30vh);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes rotateDots {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
